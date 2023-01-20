@@ -1,0 +1,19 @@
+
+version: "3.6"
+services:          
+             
+  lkh-client:
+    image: "cmjsoftware1/lkh-website"
+    container_name: "lkh-website"
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./client:/app/client
+          
+networks:
+  default:
+    driver: bridge        
+            
